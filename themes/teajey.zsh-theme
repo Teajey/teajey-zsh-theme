@@ -13,7 +13,10 @@ _accordion_path() {
 ')
 }
 
-precmd () { psvar[1]=$(_accordion_path); }
+precmd () { 
+   psvar[1]=$(_accordion_path);
+   psvar[2]=$(git_prompt_info);
+}
 
 local return_code="%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})"
 local open_sq_bckt="%{$fg_bold[red]%}[%{$reset_color%}"
@@ -21,14 +24,15 @@ local close_sq_bckt="%{$fg_bold[red]%}]%{$reset_color%}"
 local user="%{$fg_bold[yellow]%}%n%{$reset_color%}"
 local at="%{$fg_bold[green]%}@%{$reset_color%}"
 local host="%{$fg_bold[blue]%}%m%{$reset_color%}"
-local git_branch="%{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}"
+local dir="%{$fg_bold[magenta]%}%1v%{$reset_color%}"
+local git_branch="%{$fg_bold[cyan]%}%2v%{$reset_color%}"
 
 # Command line adapted from the murilasso theme:
 # [username@hostname path] gitbranch                                 errcode #
-PROMPT="${open_sq_bckt}${user}${at}${host} %{$fg_bold[magenta]%}%1v%{$reset_color%}${close_sq_bckt} ${git_branch}%B%b"
+PROMPT="${open_sq_bckt}${user}${at}${host} ${dir}${close_sq_bckt} ${git_branch}%B%b"
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=" "
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
