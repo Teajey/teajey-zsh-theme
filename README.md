@@ -1,5 +1,6 @@
 # teajey-zsh-theme
 My personal oh-my-zsh theme!
+
 Adapted from the murilasso and fishy themes.
 
 ![preview image](https://i.imgur.com/l4eAczo.jpg)
