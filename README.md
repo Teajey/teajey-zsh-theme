@@ -3,9 +3,6 @@ My personal oh-my-zsh theme!
 
 Adapted from the murilasso and fishy themes.
 
-![preview image](https://i.imgur.com/l4eAczo.jpg)
-*This is in default Linux colors. It looks nicer with a better color scheme.
-
 Collapses the path to the "most relevant" directories:
 
 e.g.:

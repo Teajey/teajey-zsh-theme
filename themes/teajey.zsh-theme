@@ -26,10 +26,12 @@ local at="%{$fg_bold[green]%}@%{$reset_color%}"
 local host="%{$fg_bold[blue]%}%m%{$reset_color%}"
 local dir="%{$fg_bold[magenta]%}%1v%{$reset_color%}"
 local git_branch="%{$fg_bold[cyan]%}%2v%{$reset_color%}"
+local newline="\n%{$fg_bold[green]%}\$%{$reset_color%} "
 
 # Command line adapted from the murilasso theme:
 # [username@hostname path] gitbranch                                 errcode #
-PROMPT="${open_sq_bckt}${user}${at}${host} ${dir}${close_sq_bckt} ${git_branch}%B%b"
+# $ 
+PROMPT="${open_sq_bckt}${user}${at}${host} ${dir}${close_sq_bckt} ${git_branch}%B%b${newline}"
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
